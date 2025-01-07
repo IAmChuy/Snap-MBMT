@@ -1,0 +1,36 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/v1.4.json",
+    "author": "IamChuy",
+    "name": "Snap MBMT",
+    "packs": {
+        "behaviorPack": "./packs/BP",
+        "resourcePack": "./packs/RP"
+    },
+    "regolith": {
+        "dataPath": "./packs/data",
+        "filterDefinitions": {
+            "system_template": {
+                "url": "github.com/Nusiq/regolith-filters",
+                "version": "3.11.1"
+            }
+        },
+        "formatVersion": "1.4.0",
+        "profiles": {
+            "default": {
+                "export": {
+                    "build": "standard",
+                    "readOnly": false,
+                    "target": "development"
+                },
+                "filters": [
+                    {
+                        "filter": "system_template",
+                        "settings": {
+                            "scope_path": "scope.json"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
